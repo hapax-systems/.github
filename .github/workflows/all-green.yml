@@ -13,6 +13,9 @@ jobs:
   all-green:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # SHA-pinned: the org actions policy rejects tag-pinned actions
+      # (tag pins caused startup_failure on every run since 2026-07-07,
+      # leaving the required all-green context permanently unreported).
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
       - name: Verify organization profile source
         run: test -f profile/README.md
