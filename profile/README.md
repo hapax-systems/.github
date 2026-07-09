@@ -28,7 +28,7 @@ The public portfolio is intentionally split by value surface. Some parts are ope
 
 - Reins is the product front door: read and command-preview for governed agentic delivery. It remains a read/preview surface until receipt-backed writes ship and are released.
 - agentgov is the adoption commons: portable governance hooks for AI coding agents under MIT.
-- hapax-spine is the BSL 1.1 runtime mechanism behind Reins; its repository is private during restructure, and it is not a general-purpose lifecycle kernel.
+- hapax-spine is the source-available BSL 1.1 runtime mechanism behind Reins; it is not a general-purpose lifecycle kernel.
 - hapax-council is the research/runtime apparatus. It is published for inspection and citation, not as a supported framework.
 - Hapax Logos MCP Bridge, Mobile Context Source, and Wrist Biometric Source are public source-visible boundary artifacts. They support audit and integration review; they are not general products, health products, or broad MCP framework claims.
 - The Claim Verification Council is a public-facing capability name for claim-checking governance. Internal labels are not part of the public API.
