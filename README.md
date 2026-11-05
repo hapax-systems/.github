@@ -1,81 +1,32 @@
-# Hapax Systems
+# Hapax Research Lab
 
-**Hapax Research Labs** — we publish what we think, we find out if it is true,
-and we publish what we found.
+**Hapax Research Lab** builds instruments and software for inspecting claims about AI progress and governance, testing them against primary sources and experiments, and recording scored results — including misses — alongside what each result changes next.
 
-## The third way
+The `hapax-systems` GitHub organization hosts the lab's public source repositories and data ledgers. Each repository is governed by its own `LICENSE`, `SECURITY.md`, and `SUPPORT.md` boundary files.
 
-Public conversation about AI capability is dominated by two positions that agree
-on more than either admits: that the future is already determined, and that the
-argument is over which pre-written ending we are hurtling toward. One camp knows
-the ending is collapse. The other knows the ending is fine. Both publish
-certainty. Neither publishes scores.
+- **Research portal & register:** [hapaxresearch.com](https://hapaxresearch.com)
+- **Research weblog & field notes:** [hapax.weblog.lol](https://hapax.weblog.lol)
+- **Public profile:** [hapax.omg.lol](https://hapax.omg.lol)
+- **Contact & disclosures:** [hrl-han@hapaxresearch.com](mailto:hrl-han@hapaxresearch.com) ([disclosure & correction policy](https://hapaxresearch.com/about/#contact))
 
-We hold a third position, and it is not a midpoint. It is a different activity:
-**finding out, in public, with instruments.**
+## Public Architecture
 
-- We publish what we think — as **registered, falsifiable claims** with
-  thresholds and dates, never as moods.
-- We find out if it is true — against primary sources, and by experiment.
-- We publish the results — **scored, and regardless of direction.** A miss is
-  published as prominently as a hit.
-- We publish the implications — what the scored result changes about what we
-  will claim next.
+| Repository | Role | License |
+|---|---|---|
+| [`reins`](https://github.com/hapax-systems/reins) | Terminal cockpit for observing and previewing a governed AI-agent delivery lifecycle (read and command-preview surface). | Business Source License 1.1 |
+| [`hapax-constitution`](https://github.com/hapax-systems/hapax-constitution) | Constitutional governance specification, public metadata authority, and repository enforcement tooling (`hapax-sdlc`). | CC BY-NC-ND 4.0 (spec) / Apache-2.0 (`hapax-sdlc`) |
+| [`hapax-spine`](https://github.com/hapax-systems/hapax-spine) | Source-available runtime mechanism behind Reins: append-only event ledgers, policy-backed routing, capability receipts, and quota tracking. | Business Source License 1.1 |
+| [`hapax-research-ledger`](https://github.com/hapax-systems/hapax-research-ledger) | Public-domain numeric evidence ledger recording observations, controlled vocabularies, content hashes, and methodological caveats. | CC0-1.0 |
 
-That loop — position, test, score, implication — is the whole of the position.
-Anyone can hold opinions about AI trajectories. A public, scored, falsifiable
-track record is the product.
+### Experimental & Supporting Repositories
 
-## The instrument: a four-rung evidence ladder
+- [`hapax-mcp`](https://github.com/hapax-systems/hapax-mcp) — Experimental research tooling: local Model Context Protocol (`stdio`) bridge connecting MCP clients to an existing Logos API deployment (MIT).
+- [`hapax-assets`](https://github.com/hapax-systems/hapax-assets) — Static publication and brand asset mirror with per-asset provenance and license notices ([Pages mirror](https://hapax-systems.github.io/hapax-assets/)).
+- *Historical archive:* `agentgov` is retired and archived for historical reference only; active governance rules and enforcement tooling live in [`hapax-constitution`](https://github.com/hapax-systems/hapax-constitution).
 
-Claims about AI capability are not one kind of thing, and most discourse failure
-is category error — a forecast argued over as if it were a demonstration.
-We classify every claim before discussing it:
+## Operating Commitments & Scope
 
-1. **Demonstrated** — exists in a bounded, scored setting. Demonstrated means
-   *bounded*: it happened inside the experiment, full stop.
-2. **Plausible** — modeled on measured parameters, not yet observed. This is
-   where vigilance lives, and where speculation dresses up.
-3. **Forecast** — what named populations expect, properly counted. Forecasts
-   are data about the forecasters, not about the future.
-4. **Unverified** — everything that cannot yet be pinned to a primary. It is
-   not dishonest to discuss; it is dishonest to let it *borrow weight* from
-   the rungs above.
-
-Moving a claim *down* a rung in public is a success of the method, not a
-concession.
-
-## What is here
-
-| Repository | What it is |
-|---|---|
-| [`hapax-research-ledger`](https://github.com/hapax-systems/hapax-research-ledger) | Public-domain numeric evidence ledger for the research program |
-| [`agentgov`](https://github.com/hapax-systems/agentgov) | Standalone governance hooks for AI coding agents — our permissive adoption wedge |
-| [`hapax-council`](https://github.com/hapax-systems/hapax-council) | Source-visible research/runtime for evidence-bound AI-agent delivery |
-| [`hapax-spine`](https://github.com/hapax-systems/hapax-spine) | Source-available runtime mechanism: append-only events, policy-backed routing, receipts (BSL 1.1) |
-| [`hapax-constitution`](https://github.com/hapax-systems/hapax-constitution) | Governance specification and enforcement tooling |
-| [`hapax-mcp`](https://github.com/hapax-systems/hapax-mcp) | MCP bridge for the Logos APIs |
-
-Plus source-visible supporting bridges ([`hapax-officium`](https://github.com/hapax-systems/hapax-officium),
-[`hapax-phone`](https://github.com/hapax-systems/hapax-phone), [`hapax-watch`](https://github.com/hapax-systems/hapax-watch),
-[`reins`](https://github.com/hapax-systems/reins), [`hapax-assets`](https://github.com/hapax-systems/hapax-assets)).
-
-## Elsewhere
-
-- [hapax.omg.lol](https://hapax.omg.lol) — profile and index
-- [hapax.weblog.lol](https://hapax.weblog.lol) — weblog
-
-The prediction register and scored track record are in preparation; they will
-be linked from every property we operate, permanently, including the misses.
-
-## Commitments
-
-- Every public claim is registered before it is tested, and scored after.
-- Corrections are published with the prominence of the original.
-- The register, the scores, and the misses are permanent.
-- Cadence is bounded by verification quality, not by appetite.
-
----
-
-*Hapax Research Labs. Legibility first, influence second — because influence
-without legibility is just another shout.*
+1. **Position, test, score, implication:** Claims are stated with explicit thresholds before testing and scored regardless of direction. Corrections and misses remain part of the permanent public record at [hapaxresearch.com](https://hapaxresearch.com).
+2. **Explicit capability ceilings:** Public repositories document what is shipped today (`reins` read and command-preview, `hapax-spine` mechanism modules, `hapax-constitution` specifications, `hapax-research-ledger` data) without claiming autonomous write authority or staffed product support.
+3. **Repository-scoped licensing:** Rights granted in one repository do not imply rights across any other repository or trademark of Hapax Research Lab.
+4. **Support & intake boundary:** Public repositories are published for inspection, verification, and citation rather than community pull-request intake or issue-queue support. Send security disclosures or factual correction proposals to [hrl-han@hapaxresearch.com](mailto:hrl-han@hapaxresearch.com).

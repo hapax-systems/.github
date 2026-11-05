@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  all-green:
+    name: all-green
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
+      - name: Verify organization profile and root README hygiene
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          forbidden = [
+              "github.com/hapax-systems/hapax-council",
+              "github.com/hapax-systems/hapax-officium",
+              "github.com/hapax-systems/hapax-phone",
+              "github.com/hapax-systems/hapax-watch",
+              "~hapax",
+              "/home/",
+              "$",
+          ]
+          required = [
+              "Hapax Research Lab",
+              "https://hapaxresearch.com",
+              "https://hapax.weblog.lol",
+              "hrl-han@hapaxresearch.com",
+          ]
+
+          for rel in ("README.md", "profile/README.md"):
+              path = Path(rel)
+              assert path.is_file(), f"Missing {rel}"
+              text = path.read_text(encoding="utf-8")
+              assert text.strip(), f"Empty {rel}"
+              for bad in forbidden:
+                  assert bad not in text, f"Forbidden substring {bad!r} found in {rel}"
+              for req in required:
+                  assert req in text, f"Required substring {req!r} missing in {rel}"
+          print("Organization profile and README checks passed.")
+          PY
