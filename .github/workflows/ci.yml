@@ -21,14 +21,15 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
 
+          org_prefix = "github.com/hapax-systems/"
           forbidden = [
-              "github.com/hapax-systems/hapax-council",
-              "github.com/hapax-systems/hapax-officium",
-              "github.com/hapax-systems/hapax-phone",
-              "github.com/hapax-systems/hapax-watch",
-              "~hapax",
-              "/home/",
-              "$",
+              org_prefix + "hapax-" + "council",
+              org_prefix + "hapax-" + "officium",
+              org_prefix + "hapax-" + "phone",
+              org_prefix + "hapax-" + "watch",
+              "~" + "hapax",
+              "/" + "home/",
+              chr(36),
           ]
           required = [
               "Hapax Research Lab",
